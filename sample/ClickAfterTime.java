@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 import java.io.IOException;
 
-public class ClickAfterTime extends Thread{
+public class ClickAfterTime implements Runnable{
 
     private final Integer time;
     private final boolean shootdown;
@@ -20,7 +20,7 @@ public class ClickAfterTime extends Thread{
     public void run() {
 
         try {
-            // допустим, выполнение займет 20 секунд
+            // Задержка
             Thread.sleep(this.time);
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.io.IOException;
 
+
 public class Controller {
 
     @FXML
@@ -34,7 +35,7 @@ public class Controller {
         System.out.println(time.getText());
 
 
-        new ClickAfterTime(timeOut, shootdown.isSelected()).start();
+        (new Thread(new ClickAfterTime(timeOut, shootdown.isSelected()))).start();
 
         this.stage.close();
 
